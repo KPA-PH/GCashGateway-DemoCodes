@@ -19,6 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/gcash/invoice', [App\Http\Controllers\APIController::class, 'get_invoice']);
+Route::post('/gcash/invoice', [App\Http\Controllers\APIController::class, 'create_invoice']);
 Route::get('/gcash/webhook', [App\Http\Controllers\APIController::class, 'webhook']);
 Route::get('/gcash/transactions', [App\Http\Controllers\APIController::class, 'transaction']);
 
